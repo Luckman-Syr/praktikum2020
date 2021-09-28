@@ -1,0 +1,57 @@
+---
+title: "Modul3_123190151"
+author: "Luckman Nathan"
+date: "9/28/2021"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown Tugas 3
+
+```{r cars}
+library(dslabs) 
+data(murders) 
+```
+
+1. Yang paling menggambarkan karakter dari setiap variable pada data frame adalah pernyataan nomor C
+-> Data berisi nama negara bagian, singkatan dari nama negara bagian, wilayah negara bagian, dan populasi negara bagian, serta jumlah total pembunuhan pada tahun 2010
+
+```{r}
+str(murders)
+```
+2. Nama kolom yang digunakan pada data frame "Murders"
+
+```{r}
+names(murders)
+```
+
+3. Hasil ekstrak informasi singkatan negara dan menyimpannya pada objek bernama "a" dengan menggunakan operator $ serta class dari objek "a"
+
+```{r}
+a <- murders$abb
+class(a)
+```
+
+4. Menggunakan kurung siku untuk mengekstrak singkatan negara dan disimpan pada objek bernama "b" serta menentukan apakah a bernilai sama dengan b
+
+```{r}
+b <- murders[[2]]
+a == b
+```
+
+5. Menggunakan fungsi level dan length untuk menentukan jumlah region pada dataset
+
+```{r}
+length(levels(murders$region))
+```
+
+6. Menggunakan fungsi table untuk menampilkan table baru dengan isi jumlah state pada tiap religion
+
+```{r}
+table(murders$region)
+```
